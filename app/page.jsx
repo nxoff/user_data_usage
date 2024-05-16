@@ -1,30 +1,20 @@
-import prisma from '../lib/prisma';
-
 import { currentUser } from "@clerk/nextjs/server"
 
-export const getStaticProps = async () => {
-  const feed = await prisma.post.findMany({
-    where: { published: true },
-    include: {
-      author: {
-        select: { name: true },
-      },
-    },
-  });
-  return {
-    props: { feed },
-    revalidate: 10,
-  };
-};
+import Link from "next/link"
 
 const Home = async() => {
-  const user = await currentUser()
+  const currUser = await currentUser()
 
-  if (!user) return <div style={{color: 'red'}}>Not Signed In</div>
+  if (!currUser) return (
+    <>
+      <h3 style={{color: 'red'}}>You have to sign in first!</h3>
+      <Link href="/sign-in">Sign In!</Link>
+    </>
+  )
 
   return (
     <>
-      <h1>Title</h1>
+      <h1>Welcome to the Home Page!</h1>
     </>
   )
 }

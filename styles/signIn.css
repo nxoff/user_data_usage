@@ -1,0 +1,25 @@
+form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 15px;
+}
+
+h1 {
+  font-size: 38px;
+  font-weight: 300;
+  border-bottom: 2px solid black;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+section {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 30px;
+}
