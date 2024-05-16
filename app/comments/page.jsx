@@ -1,7 +1,6 @@
 import '@/styles/comments.css'
 
 import CommentBox from "@/components/CommentBox"
-
 import prisma from "@/lib/prisma"
 
 async function getComments() {
@@ -14,6 +13,7 @@ async function getComments() {
   })
   return comments
 }
+
 
 const Comments = async() => {
   const comments = await getComments()
