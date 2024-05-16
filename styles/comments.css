@@ -1,0 +1,49 @@
+
+.comments-container {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 50px;
+}
+
+.comment-box {
+  max-width: 300px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 5px;
+}
+
+.comment-box p {
+  /* height: 20px; */
+}
+
+.comment-content-wrapper {
+  border: 2px solid black;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.comment-content-wrapper h2 {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.comments-interactive-section {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+  padding-left: 15px;
+}
+
+.likes-wrapper,
+.dislikes-wrapper
+{
+  display: flex;
+  align-items: center;
+}
+
+.likes-wrapper,
+.dislikes-wrapper span {
+  font-size: 13px;
+  font-weight: 400;
+}
