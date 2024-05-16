@@ -3,3 +3,9 @@
   flex-flow: column nowrap;
   align-items: center;
 }
+
+.profile {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+}

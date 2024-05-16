@@ -14,14 +14,14 @@ export default function RootLayout({ children }) {
         <ClerkProvider>
             <html lang='en'>
                 <body className={inter.className}>
-                    <header>
-                        <SignedIn>
-                            <UserButton />
-                        </SignedIn>
-                    </header>
                     <main className='app'>
                         {children}
                     </main>
+                    <div className='profile'>
+                        <SignedIn>
+                            <UserButton />
+                        </SignedIn>
+                    </div>
                 </body>
             </html>
         </ClerkProvider>

@@ -23,3 +23,11 @@ section {
   flex-flow: column nowrap;
   gap: 30px;
 }
+
+.error_status_false {
+
+}
+
+.error_status_true {
+
+}
