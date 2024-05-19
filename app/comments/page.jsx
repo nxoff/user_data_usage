@@ -1,19 +1,9 @@
 import '@/styles/comments.css'
 
 import CommentBox from "@/components/CommentBox"
-import prisma from "@/lib/prisma"
+import { getComments } from '../api/comments'
 
-async function getComments() {
-  const comments = await prisma.comment.findMany({
-    include: {
-      author: {
-        select: {username: true}
-      }
-    }
-  })
-  return comments
-}
-
+const COMMENT_CHARACTERS_CUT = 47
 
 const Comments = async() => {
   const comments = await getComments()
@@ -32,7 +22,7 @@ const Comments = async() => {
             likes={comment.likes}
             dislikes={comment.dislikes}
             toWrap={
-              comment.content.length >= 29 ? true : false
+              comment.content.length >= COMMENT_CHARACTERS_CUT ? true : false
             }
             />
           )

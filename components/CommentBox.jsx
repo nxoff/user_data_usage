@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 
 const CommentBox = ({ authorName,  content, likes, dislikes, toWrap}) => {
   // const [commentContentWrap, setCommentContentWrap] = useState(false)
+  const [wrappedContent, setWrappedContent] = useState(content)
 
   // useEffect(() => {
   //   if (content.length >= 29) {
@@ -12,7 +13,9 @@ const CommentBox = ({ authorName,  content, likes, dislikes, toWrap}) => {
   //   }
   // }, [])
 
-  console.log(authorName, toWrap)
+  // for (let i = 0; i < content.length; i++) {
+  //   console.log(content.charAt(i));
+  // }
 
   return (
     <header className="comment-box">
@@ -20,7 +23,11 @@ const CommentBox = ({ authorName,  content, likes, dislikes, toWrap}) => {
         <h2>{authorName}</h2>
         {
           toWrap ?
-          <p style={{height: 'fit-content'}}>{content}</p>
+          <>
+            <p style={{height: '20px'}}>{content.slice(0, 48)}
+              <span className="comment-read-more">czytaj dalej</span>
+            </p>
+          </>
           :
           <p style={{height: '20px'}}>{content}</p>
         }
